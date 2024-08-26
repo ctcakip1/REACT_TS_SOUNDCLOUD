@@ -10,9 +10,10 @@ import {
     Link,
 } from "react-router-dom";
 import UsersPage from "./screens/users.page.tsx";
-import { FireOutlined, SmileOutlined } from "@ant-design/icons";
+import { FireOutlined, SmileOutlined, SpotifyOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Menu } from "antd";
+import TracksPage from "./screens/tracks.page.tsx";
 const items: MenuProps["items"] = [
     {
         label: <Link to={"/"}>Home</Link>,
@@ -23,6 +24,11 @@ const items: MenuProps["items"] = [
         label: <Link to={"/users"}>Manage Users</Link>,
         key: "users",
         icon: <SmileOutlined />,
+    },
+    {
+        label: <Link to={"/tracks"}>Manage Tracks</Link>,
+        key: "tracks",
+        icon: <SpotifyOutlined />,
     },
 ];
 const LayoutAdmin = () => {
@@ -78,6 +84,10 @@ const router = createBrowserRouter([
             {
                 path: "users",
                 element: <UsersPage />,
+            },
+            {
+                path: "tracks",
+                element: <TracksPage />,
             },
         ],
     },
